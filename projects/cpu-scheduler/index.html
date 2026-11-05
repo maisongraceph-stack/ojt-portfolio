@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CPU Scheduling Simulator | John Patrick Sunga</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="wrap">
+    <header class="head">
+      <div>
+        <p class="kicker">Operating systems</p>
+        <h1>CPU Scheduling Simulator</h1>
+      </div>
+      <a href="../../index.html" class="back">← Portfolio</a>
+    </header>
+
+    <section class="card">
+      <div class="card-head">
+        <h2>Processes</h2>
+        <div class="row-actions">
+          <button type="button" class="btn" id="add">Add process</button>
+          <button type="button" class="btn" id="sample">Load sample</button>
+        </div>
+      </div>
+      <div class="table-scroll">
+        <table class="proc">
+          <thead><tr><th>Process</th><th>Arrival time</th><th>Burst time</th><th>Priority <small>(lower = first)</small></th><th><span class="sr">Remove</span></th></tr></thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="controls">
+        <div class="algos" role="group" aria-label="Scheduling algorithm" id="algos">
+          <button type="button" data-a="FCFS" aria-pressed="true">FCFS</button>
+          <button type="button" data-a="SJF" aria-pressed="false">SJF</button>
+          <button type="button" data-a="PRIORITY" aria-pressed="false">Priority</button>
+          <button type="button" data-a="RR" aria-pressed="false">Round Robin</button>
+        </div>
+        <label class="quantum" id="quantum-wrap" hidden>Time quantum <input type="number" id="quantum" min="1" value="2"></label>
+      </div>
+      <p class="algo-note" id="algo-note"></p>
+      <p class="error" id="error" role="alert"></p>
+
+      <h2>Gantt chart</h2>
+      <div class="gantt-scroll"><div class="gantt" id="gantt"></div></div>
+
+      <h2>Results</h2>
+      <div class="table-scroll">
+        <table class="results">
+          <thead><tr><th>Process</th><th>Completion</th><th>Turnaround</th><th>Waiting</th></tr></thead>
+          <tbody id="results"></tbody>
+        </table>
+      </div>
+      <div class="averages">
+        <div><span>Average waiting time</span><strong id="avg-wait">0</strong></div>
+        <div><span>Average turnaround time</span><strong id="avg-tat">0</strong></div>
+      </div>
+    </section>
+
+    <section class="card compare">
+      <h2>Compare all algorithms</h2>
+      <p class="algo-note">Same processes, average waiting time. Lower is better.</p>
+      <div id="compare"></div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

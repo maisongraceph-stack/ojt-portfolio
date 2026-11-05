@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Device Info Inspector | John Patrick Sunga</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap top-inner">
+      <div>
+        <p class="kicker">Helpdesk tool</p>
+        <h1>Device Info Inspector</h1>
+      </div>
+      <a href="../../index.html" class="back">← Portfolio</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <p class="intro">This page reads your device details directly in your browser. Nothing is sent anywhere. Copy the report and paste it into your support ticket or message.</p>
+
+    <div class="groups" id="groups"></div>
+
+    <section class="report">
+      <div class="report-head">
+        <h2>Support report</h2>
+        <div class="actions">
+          <button type="button" class="btn primary" id="copy">Copy report</button>
+          <button type="button" class="btn" id="refresh">Refresh</button>
+        </div>
+      </div>
+      <label for="note" class="note-label">Describe the problem (optional)</label>
+      <textarea id="note" rows="2" placeholder="e.g. Wi-Fi keeps disconnecting every few minutes"></textarea>
+      <pre id="report" tabindex="0"></pre>
+      <p class="status" id="status" role="status"></p>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
